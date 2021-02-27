@@ -8,24 +8,26 @@ public class Gravitacija {
 
         double nadmorskaVisina = sc.nextDouble();
 
-        izpisiVrednost(nadmorskaVisina);
+        double pospesek = izracun(nadmorskaVisina);
+
+        izpisiVrednost(nadmorskaVisina, pospesek);
         System.out.println("OIS je zakon!");
 
 
     }
 
-    public static void izpisiVrednost(double v)
+    public static void izpisiVrednost(double v, double pospesek)
     {
-        System.out.printf("Nadmorska višina je: %f\nGravitacijski pospešek je: %f", izracun(v), v);
+        System.out.printf("Nadmorska višina je: %f\nGravitacijski pospešek je: %f", pospesek, v);
     }
 
-    public static double izracun(int h){
+    public static double izracun(double h){
         double v = sc.nextDouble();
         double c = 667400;
         double m = 597200000;
         double r = 6371000;
 
-        double a=(cm)/((r+v)*(r+v));
+        double a=(c*m)/((r+v)*(r+v));
         return a;
     }
 }
